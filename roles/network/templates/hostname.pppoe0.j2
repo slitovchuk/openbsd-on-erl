@@ -1,0 +1,7 @@
+inet 0.0.0.0 255.255.255.255 NONE mtu 1500 \
+    pppoedev cnmac0 authproto chap \
+    authname '***REMOVED***' authkey '***REMOVED***' up
+dest 0.0.0.1
+inet6 eui64
+!/sbin/route add default -ifp pppoe0 0.0.0.1
+!/sbin/route add -inet6 default -ifp pppoe0 fe80::%pppoe0

@@ -7,18 +7,18 @@
     state: touch
   become: yes
 
-- name: insert dhcp6c_flags=cnmac0 in /etc/rc.conf.local
+- name: insert dhcp6c_flags=pppoe0 in /etc/rc.conf.local
   lineinfile:
     state: present
     dest: /etc/rc.conf.local
     regexp: '^dhcp6c_flags='
-    line: 'dhcp6c_flags=cnmac0'
+    line: 'dhcp6c_flags=pppoe0'
   become: yes
 
-- name: insert dhcp6c restart in /etc/hostname.cnmac0
+- name: insert dhcp6c restart in /etc/hostname.pppoe0
   lineinfile:
     state: present
-    dest: /etc/hostname.cnmac0
+    dest: /etc/hostname.pppoe0
     insertafter: EOF
     line: '!/usr/sbin/rcctl restart dhcp6c'
   become: yes
