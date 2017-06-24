@@ -57,3 +57,11 @@
 - name: start rtadvd
   shell: rcctl start rtadvd
   become: yes
+
+- name: insert ntpd_flags="-s" in /etc/rc.conf.local
+  lineinfile:
+    state: present
+    path: /etc/rc.conf.local
+    regexp: '^ntpd_flags='
+    line: 'ntpd_flags="-s"'
+  become: yes
