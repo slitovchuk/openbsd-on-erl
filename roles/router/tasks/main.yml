@@ -65,3 +65,12 @@
     regexp: '^ntpd_flags='
     line: 'ntpd_flags="-s"'
   become: yes
+
+- name: copy doas conf
+  template:
+    src: doas.conf.j2
+    dest: /etc/doas.conf
+    owner: root
+    group: wheel
+    mode: "0644"
+  become: yes
