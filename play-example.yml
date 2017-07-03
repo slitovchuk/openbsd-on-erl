@@ -24,12 +24,10 @@
     vether0_netmask: "255.255.255.0"
     vether0_broadcast: "192.168.10.255"
     dns_forwarders:
-      - ipaddr: "23.226.230.72"
-        org: "OpenDNS"
+      - ipaddr: "195.138.80.86"
+        org: "TeNeT"
       - ipaddr: "8.8.4.4"
         org: "Google"
-      - ipaddr: "37.235.1.174"
-        org: "FreeDNS"
       - ipaddr: "8.8.8.8"
         org: "Google"
     dns_forwarders_ipv6:
