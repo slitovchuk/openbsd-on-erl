@@ -13,7 +13,7 @@
     - role: pf
   vars:
     hostname: "erl-t75"
-    domain: "my.domain"
+    domain: "t75"
     cnmac0_override_mac: "***REMOVED***"
     cnmac0_original_mac: "***REMOVED***"
     vether0_octet_1: "192"
