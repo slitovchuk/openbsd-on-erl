@@ -3,7 +3,6 @@
   roles:
     - role: install
     - role: network
-    - role: dhcp6c
     - role: unbound
       interfaces:
         - "127.0.0.1"
@@ -30,11 +29,6 @@
         org: "Google"
       - ipaddr: "8.8.8.8"
         org: "Google"
-    dns_forwarders_ipv6:
-      - ipaddr: "2604:180:1:22a::8c53"
-        org: "OpenDNS"
-      - ipaddr: "2600:3c02::f03c:91ff:fe84"
-        org: "OpenDNS"
     dns_records:
       - hostname: "***REMOVED***"
         ipv4addr: "192.168.10.3"
