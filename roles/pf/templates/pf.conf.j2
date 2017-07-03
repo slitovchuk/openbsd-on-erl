@@ -81,6 +81,7 @@ pass out quick on egress inet6 from { egress, (vether0:network) } modulate state
 pass out quick on egress inet from egress modulate state
 
 # NAT all outbound IPv4 traffic from the rest of our network
+pass out quick on cnmac0 inet from (vether0:network) nat-to (cnmac0) modulate state
 pass out quick on egress inet from (vether0:network) nat-to (egress) modulate state
 
 ### ~~~ Block undesirable traffic ~~~ ###
