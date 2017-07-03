@@ -57,7 +57,7 @@ set skip on lo
 match in all scrub (no-df random-id)
 
 # Limit the MSS on PPPoE to 1440 octets
-# match on pppoe0 scrub (max-mss 1440)
+match on pppoe0 scrub (max-mss 1452)
 
 # Block all packets by default, logging them to pflog0
 block log
@@ -69,7 +69,7 @@ block log
 pass quick on { vether0 cnmac1 cnmac2 }
 
 # Pass all outbound IPv4 traffic from this host
-pass out quick on egress inet from egress modulate state
+pass out quick on egress inet from (egress) modulate state
 
 # NAT all outbound IPv4 traffic from the rest of our network
 pass out quick on cnmac0 inet from (vether0:network) nat-to (cnmac0) modulate state
