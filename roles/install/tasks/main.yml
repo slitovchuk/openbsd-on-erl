@@ -4,3 +4,9 @@
     state: latest
     name: wide-dhcpv6
   become: yes
+
+- name: install openvpn
+  openbsd_pkg:
+    state: latest
+    name: openvpn
+  become: yes
