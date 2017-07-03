@@ -21,7 +21,7 @@ server:
     do-ip4: yes
 
   # Enable IPv6, "yes" or "no".
-    do-ip6: yes
+    do-ip6: no
 
   # Enable UDP, "yes" or "no".
     do-udp: yes
@@ -203,8 +203,5 @@ server:
    forward-zone:
       name: "."
       {% for item in dns_forwarders %}
-      forward-addr: {{ item.ipaddr }}        # {{ item.org }}
-      {% endfor %}
-      {% for item in dns_forwarders_ipv6 %}
       forward-addr: {{ item.ipaddr }}        # {{ item.org }}
       {% endfor %}
