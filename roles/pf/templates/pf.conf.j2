@@ -69,9 +69,11 @@ block log
 pass quick on { vether0 cnmac1 cnmac2 }
 
 # Pass all outbound IPv4 traffic from this host
+pass out quick on cnmac0 inet from (cnmac0) modulate state
 pass out quick on egress inet from (egress) modulate state
 
 # NAT all outbound IPv4 traffic from the rest of our network
+pass out quick on tun0 inet nat-to (tun0) modulate state
 pass out quick on cnmac0 inet from (vether0:network) nat-to (cnmac0) modulate state
 pass out quick on egress inet from (vether0:network) nat-to (egress) modulate state
 
