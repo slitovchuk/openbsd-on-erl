@@ -88,6 +88,10 @@ block log quick on egress to { no-route, <martians> }
 # Pass all inbound ICMP echo requests
 pass in quick on egress inet proto icmp icmp-type echoreq
 
+### ~~~ Allow inbound connections through VPN ~~~ ###
+
+pass in on tun0
+
 ### ~~~ Open services on this router ~~~ ###
 
 # OpenSSH server
