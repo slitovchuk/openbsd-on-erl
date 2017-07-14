@@ -95,7 +95,7 @@ pass in on tun0
 ### ~~~ Open services on this router ~~~ ###
 
 # OpenSSH server
-pass in on egress proto { tcp, udp } to $self_lan port ssh
+pass in on egress proto { tcp, udp } to $self_lan port { ssh, ***REMOVED*** }
 
 # Allow LAN to ping us
 pass in on { vether0 } inet proto icmp to any icmp-type { echoreq, echorep }
