@@ -1,3 +1,6 @@
 [erl-t75]
-erl-admin-dynamic ansible_python_interpreter=/usr/local/bin/python2.7
-erl-admin ansible_python_interpreter=/usr/local/bin/python2.7
+erl-admin-dynamic
+erl-admin
+
+[erl-t75:vars]
+ansible_python_interpreter=/usr/local/bin/python2.7
